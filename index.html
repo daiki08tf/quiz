@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>とけるくん | 4区分ひたすら問題演習</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="app-header">
+  <span class="logo">とけるくん</span>
+  <button id="homeBtn" class="icon-btn" title="トップへ戻る" hidden>&#8962;</button>
+</header>
+
+<main id="app">
+
+  <!-- ホーム画面 -->
+  <section id="home-screen" class="screen">
+    <p class="lead">読むより、1問解くほうが早い。</p>
+    <p class="sub">区分を選ぶと、その場でひたすら問題が出続けます。答えを選ぶと、すぐに解説が表示されます。</p>
+
+    <div class="category-grid">
+      <button class="category-card" data-cat="itpassport" style="--accent:#3b82f6">
+        <span class="cat-name">ITパスポート</span>
+        <span class="cat-count"></span>
+      </button>
+      <button class="category-card" data-cat="fe" style="--accent:#22c55e">
+        <span class="cat-name">基本情報技術者</span>
+        <span class="cat-count"></span>
+      </button>
+      <button class="category-card" data-cat="ap" style="--accent:#f59e0b">
+        <span class="cat-name">応用情報技術者</span>
+        <span class="cat-count"></span>
+      </button>
+      <button class="category-card" data-cat="sg" style="--accent:#ef4444">
+        <span class="cat-name">情報セキュリティ<br>マネジメント</span>
+        <span class="cat-count"></span>
+      </button>
+    </div>
+
+    <button id="allBtn" class="secondary-btn">4区分すべてをミックスして解く</button>
+
+    <p class="note">※ 収録している問題は各試験区分の出題傾向に沿ったオリジナル問題です。</p>
+  </section>
+
+  <!-- クイズ画面 -->
+  <section id="quiz-screen" class="screen" hidden>
+    <div class="quiz-top">
+      <span id="quizCatLabel" class="badge"></span>
+      <span id="quizProgress" class="progress"></span>
+      <span id="quizScore" class="score"></span>
+    </div>
+
+    <div class="question-card">
+      <p id="questionText" class="question-text"></p>
+      <div id="choices" class="choices"></div>
+    </div>
+
+    <div id="explainBox" class="explain-box" hidden>
+      <p id="explainResult" class="explain-result"></p>
+      <p id="explainText" class="explain-text"></p>
+      <button id="nextBtn" class="primary-btn">次の問題へ &rarr;</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
